@@ -9,22 +9,21 @@ from setuptools import (
 
 deps = {
     'keyfile': [
-        "eth-utils>=1.3.0,<2",
-        "newchain-keys>=0.1.0",
+        "eth-utils>=2,<3",
+        "newchain-keys>=0.2.0",
         "pycryptodome>=3.6.6,<4",
     ],
     'test': [
-        "pytest>=3.6,<3.7",
+        "pytest>=6.2.5,<7",
     ],
     'lint': [
-        "flake8==3.5.0",
+        "flake8==4.0.1",
     ],
     'dev': [
         "bumpversion>=0.5.3,<1",
         "wheel",
         "setuptools>=36.2.0",
-        # Fixing this dependency due to: pytest 3.6.4 has requirement pluggy<0.8,>=0.5, but you'll have pluggy 0.8.0 which is incompatible.
-        "pluggy==0.7.1",
+        "pluggy>=1.0.0,<2",
         # Fixing this dependency due to: requests 2.20.1 has requirement idna<2.8,>=2.5, but you'll have idna 2.8 which is incompatible.
         "idna==2.7",
         # idna 2.7 is not supported by requests 2.18
@@ -47,7 +46,7 @@ install_requires = deps['keyfile']
 setup(
     name='newchain-keyfile',
     # *IMPORTANT*: Don't manually change the version here. Use the 'bumpversion' utility.
-    version='0.1.3',
+    version='0.2.0',
     description=(
         "A library for handling the encrypted keyfiles used to store newchain "
         "private keys."
@@ -59,7 +58,6 @@ setup(
     include_package_data=True,
     install_requires=install_requires,
     extras_require=deps,
-    setup_requires=['setuptools-markdown'],
     py_modules=['newchain_keyfile'],
     license="MIT",
     zip_safe=False,
@@ -70,10 +68,10 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
 )
